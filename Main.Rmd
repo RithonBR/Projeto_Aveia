@@ -1,0 +1,26 @@
+---
+title: "Pliman_Ferrugem_aveia"
+author: "Rithon"
+date: "2024-08-25"
+output: html_document
+---
+
+```{r}
+library(pliman)
+```
+
+
+```{r}
+get_wd_here(path = "img/")
+```
+Testar na aveia
+```{r}
+severidade <-
+  measure_disease(pattern = "f",
+                  dir_original = "img/",
+                  index_dh = "NGRDI",
+                  has_white_bg = FALSE,
+                  threshold = c("Otsu", 0.1))
+
+severidade$severity
+```
